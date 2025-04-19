@@ -1,10 +1,20 @@
-import React from "react";
+import styled from "styled-components";
 import TodoCard from "./TodoCard";
+
+const Main = styled.ul`
+  max-width: 800px;
+  width: 100%;
+  margin: 12px auto;
+  gap: 14px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+`;
 
 const TodoList = ({ todos, deleteTodo, editTodo }) => {
   return (
     <div>
-      <ul className="main">
+      <Main>
         {todos.map((todo, index) => (
           <TodoCard
             key={index}
@@ -14,7 +24,7 @@ const TodoList = ({ todos, deleteTodo, editTodo }) => {
             editTodo={editTodo}
           />
         ))}
-      </ul>
+      </Main>
     </div>
   );
 };
